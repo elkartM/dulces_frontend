@@ -59,13 +59,13 @@ const CrearCuenta = () =>{
             msg = "El usuario ya existe en BD";
             titulo = "Error en creación de usuario";
             tipo = "error";
-            alerta("msg, tipo,titulo");
+            alerta(msg, tipo,titulo);
         }
         else if (respuesta === "Usuario Creado"){
             msg = "Usuario creado!";
             titulo = "Procedimiento correcto";
             tipo = "success";
-            alerta("msg, tipo,titulo");
+            alerta(msg, tipo,titulo);
         }
 
         setUsuario({
@@ -92,45 +92,45 @@ const CrearCuenta = () =>{
                         <div className="card-body">
                             <form onSubmit={onSubmit}>
                                 <div>
-                                <div className="form-floating mb-3">
-                                    <input 
-                                        type="text" 
-                                        className="form-control" 
-                                        placeholder="Nombre"
-                                        id="nombre"
-                                        name="nombre"
-                                        value={nombre}
-                                        onChange={onChange}
-                                        required
-                                    />
-                                    <label htmlFor="floatingInput">Nombre</label>
-                                </div>
-                                <div className="form-floating mb-3">
-                                    <input 
-                                        type="email" 
-                                        className="form-control" 
-                                        placeholder="name@example.com"
-                                        id="email"
-                                        name="email"
-                                        value={email}
-                                        onChange={onChange}
-                                        required
-                                    />
-                                    <label htmlFor="floatingInput">Email</label>
-                                </div>
-                                <div className="form-floating">
-                                    <input 
-                                        type="password" 
-                                        className="form-control"
-                                        placeholder="Password" 
-                                        id="contra" 
-                                        name="contra"
-                                        value={contra}
-                                        onChange={onChange}
-                                        required
-                                    />
-                                    <label htmlFor="floatingPassword">Password</label>
-                                </div>
+                                    <div className="form-floating mb-3">
+                                        <input 
+                                            type="text" 
+                                            className="form-control" 
+                                            placeholder="Nombre"
+                                            id="nombre"
+                                            name="nombre"
+                                            value={nombre}
+                                            onChange={onChange}
+                                            required
+                                        />
+                                        <label htmlFor="floatingInput">Nombre</label>
+                                    </div>
+                                    <div className="form-floating mb-3">
+                                        <input 
+                                            type="email" 
+                                            className="form-control" 
+                                            placeholder="name@example.com"
+                                            id="email"
+                                            name="email"
+                                            value={email}
+                                            onChange={onChange}
+                                            required
+                                        />
+                                        <label htmlFor="floatingInput">Email</label>
+                                    </div>
+                                    <div className="form-floating">
+                                        <input 
+                                            type="password" 
+                                            className="form-control"
+                                            placeholder="Password" 
+                                            id="contra" 
+                                            name="contra"
+                                            value={contra}
+                                            onChange={onChange}
+                                            required
+                                        />
+                                        <label htmlFor="floatingPassword">Password</label>
+                                    </div>
                                 </div>
                                 <div className="container mt-4">
                                 <button type="submit" className="btn btn-primary my-2">Crear Cuenta</button>

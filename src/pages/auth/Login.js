@@ -23,9 +23,10 @@ const Login = () => {
             }
         });
     }
-
+    // para redireccionar de un componente a otro
     const navegador = useNavigate();
 
+    // definición del estado inicial de las variables
     const [ usuario, setUsuario] = useState({
         email: "",
         contra: ""
@@ -43,6 +44,7 @@ const Login = () => {
     useEffect(() => {
         document.getElementById("email").focus();
     },[]);
+
     const onSubmit = (e) => {
         e.preventDefault();
         inicioSesion();
@@ -61,7 +63,7 @@ const Login = () => {
             msg = "Bienvenido!";
             titulo = "Ingreso exitoso!";
             tipo = "success";
-            alerta("msg, tipo,titulo");
+            alerta(msg, tipo, titulo);
             localStorage.setItem("user", response.usuario);
             navegador("/Home");
         }
@@ -69,7 +71,7 @@ const Login = () => {
             msg = "Error al ingresar al sistema";
             titulo = "Acceso denegado";
             tipo = "error";
-            alerta("msg, tipo,titulo");
+            alerta(msg, tipo,titulo);
         }
         setUsuario({
             email: "",
@@ -99,7 +101,6 @@ const Login = () => {
                                         value={email}
                                         onChange={onChange}
                                         required
-
                                     />
                                     <label htmlFor="floatingInput">Email</label>
                                 </div>
@@ -107,7 +108,7 @@ const Login = () => {
                                     <input 
                                         type="password" 
                                         className="form-control" 
-                                        placeholder="Password"
+                                        placeholder="Contraseña"
                                         id="contra"
                                         name="contra"
                                         value={contra}
